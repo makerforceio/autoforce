@@ -1,0 +1,8 @@
+launch>
+    <machine name="gcs" address="10.22.0.1" user="ros" password="ros123" default="true" />
+    <machine name="drone" address="10.22.0.22" user="pi" password="raspberry" default="false" />
+
+    <node pkg="autoforce_offb_controller" type="controller_node.py" name="main_controller" machine="gcs"></node>
+    <node pkg="autoforce_ir" type="ir_node.py" name="ir_node" machine="drone"></node>
+    <node pkg="autoforce_mixer" type="mixer_node.py" name="mixer_node" machine="drone"></node>
+</launch>
